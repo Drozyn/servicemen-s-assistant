@@ -1,0 +1,255 @@
+object Form3: TForm3
+  Left = 411
+  Height = 537
+  Top = 81
+  Width = 510
+  Caption = 'Asystent serwisanta'
+  ClientHeight = 537
+  ClientWidth = 510
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '1.2.4.0'
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 16
+    Width = 155
+    Caption = 'Edycja wpisu w bazie danych:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 48
+    Width = 26
+    Caption = 'Imię:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 80
+    Width = 53
+    Caption = 'Nazwisko:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 15
+    Top = 112
+    Width = 60
+    Caption = 'Urządzenie:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 15
+    Top = 144
+    Width = 37
+    Caption = 'Model:'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 16
+    Height = 15
+    Top = 176
+    Width = 81
+    Caption = 'Numer Seryjny:'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 16
+    Height = 15
+    Top = 208
+    Width = 27
+    Caption = 'Data:'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 16
+    Height = 15
+    Top = 240
+    Width = 90
+    Caption = 'Numer Telefonu:'
+    ParentColor = False
+  end
+  object Label9: TLabel
+    Left = 16
+    Height = 15
+    Top = 272
+    Width = 72
+    Caption = 'Wyposażenie:'
+    ParentColor = False
+  end
+  object Label10: TLabel
+    Left = 16
+    Height = 15
+    Top = 304
+    Width = 27
+    Caption = 'Tryb:'
+    ParentColor = False
+  end
+  object Label11: TLabel
+    Left = 16
+    Height = 15
+    Top = 360
+    Width = 27
+    Caption = 'Opis:'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 112
+    Height = 23
+    Top = 48
+    Width = 248
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 112
+    Height = 23
+    Top = 80
+    Width = 248
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 112
+    Height = 23
+    Top = 112
+    Width = 248
+    TabOrder = 2
+  end
+  object Edit4: TEdit
+    Left = 112
+    Height = 23
+    Top = 144
+    Width = 248
+    TabOrder = 3
+  end
+  object Edit5: TEdit
+    Left = 112
+    Height = 23
+    Top = 176
+    Width = 248
+    TabOrder = 4
+  end
+  object Edit6: TEdit
+    Left = 112
+    Height = 23
+    Top = 208
+    Width = 248
+    TabOrder = 5
+  end
+  object Edit7: TEdit
+    Left = 112
+    Height = 23
+    Top = 240
+    Width = 248
+    TabOrder = 6
+  end
+  object Edit8: TEdit
+    Left = 112
+    Height = 23
+    Top = 272
+    Width = 248
+    TabOrder = 7
+  end
+  object ComboBox1: TComboBox
+    Left = 112
+    Height = 23
+    Top = 304
+    Width = 248
+    ItemHeight = 15
+    Items.Strings = (
+      'Oczekuje'
+      'Naprawione'
+      'Nieodebrane'
+      'Odebrane'
+    )
+    TabOrder = 8
+    Text = 'ComboBox1'
+  end
+  object Memo1: TMemo
+    Left = 112
+    Height = 120
+    Top = 344
+    Width = 248
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 9
+  end
+  object Button1: TButton
+    Left = 104
+    Height = 25
+    Top = 480
+    Width = 75
+    Caption = 'OK'
+    OnClick = Button1Click
+    TabOrder = 10
+  end
+  object Button2: TButton
+    Left = 280
+    Height = 25
+    Top = 480
+    Width = 75
+    Caption = 'Anuluj'
+    OnClick = Button2Click
+    TabOrder = 11
+  end
+  object Button3: TButton
+    Left = 192
+    Height = 25
+    Top = 480
+    Width = 75
+    Caption = 'Drukuj'
+    OnClick = Button3Click
+    TabOrder = 12
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'baza_zamowienia.db'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    LogEvents = []
+    Options = []
+    left = 24
+    top = 424
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 384
+    top = 456
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = SQLite3Connection1
+    left = 352
+    top = 494
+  end
+  object frReport1: TfrReport
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    left = 384
+    top = 392
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 392
+    top = 336
+  end
+  object frDesigner1: TfrDesigner
+    left = 432
+    top = 280
+  end
+  object frDBDataSet1: TfrDBDataSet
+    DataSet = SQLQuery1
+    left = 394
+    top = 233
+  end
+end

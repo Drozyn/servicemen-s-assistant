@@ -1,0 +1,38 @@
+object Form4: TForm4
+  Left = 764
+  Height = 134
+  Top = 250
+  Width = 415
+  Caption = 'Asystent Serwisanta'
+  ClientHeight = 134
+  ClientWidth = 415
+  LCLVersion = '1.2.4.0'
+  object Label1: TLabel
+    Left = 8
+    Height = 21
+    Top = 24
+    Width = 398
+    Caption = 'Czy na pewno chcesz wprowadzić zmiany w zamówieniu?'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 96
+    Height = 25
+    Top = 72
+    Width = 75
+    Caption = 'Tak'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 232
+    Height = 25
+    Top = 72
+    Width = 75
+    Caption = 'Nie'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+end
